@@ -5,8 +5,8 @@ class Program
     static void Main(string[] args)
     {
         Random randomGenerator = new Random();
-        int guess = 0;
         int number = randomGenerator.Next(1,11);
+        int guess = 0;
         while (number != guess) 
         {
             Console.Write("What is the magic number? ");
