@@ -14,5 +14,21 @@ class Program
         prompts._prompts.Add("What is your favorite moment?");
         entry._promptText = prompts.GetPrompt();
         Console.WriteLine(entry._promptText);
+        string run = "yes";
+        while (string run == "yes")
+        {
+            Console.WriteLine("What woould you like to do?");
+            Console.WriteLine("Write");
+            Console.WriteLine("Display");
+            Console.WriteLine("Load");
+            Console.WriteLine("Save");
+            Console.WriteLine("Quit");
+            string userAction = Console.ReadLine()
+            if (userAction == "Write")
+            {
+
+            }
+            else if (userAction == "")
+        }
     }
 }

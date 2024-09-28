@@ -6,5 +6,7 @@ public class Entry
     public string _textEntry;
 
     public void Display()
-    {}
+    {
+        Console.writeLine($"{_date} Prompt: {promptText} ");
+    }
 }
