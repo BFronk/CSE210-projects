@@ -55,7 +55,7 @@ class Program
             }
             else 
             {
-                Console.WriteLine("Please enter a valid respone!");
+                Console.WriteLine("Please enter a valid response!");
             }
         }
     }
