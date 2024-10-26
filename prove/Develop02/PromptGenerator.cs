@@ -6,8 +6,7 @@ public class PromptGenerator
     public string GetPrompt()
     {
         Random random = new Random();
-        int promptNumber = random.Next(_prompts.Count);
-        string chosenPrompt = _prompts[promptNumber];
-        return chosenPrompt;    
+        int promptNumber = random.Next(_prompts.Count); 
+        return _prompts[promptNumber];
     }
 }

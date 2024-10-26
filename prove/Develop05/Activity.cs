@@ -1,8 +1,23 @@
 using System;
-
-class Program
+using System.Diagnostics;
+using System.Runtime.Serialization;
+public class Activity()
 {
-    static void Main(string[] args)
+    private string _name;
+    private string _description;
+    private int _duration;
+    
+    public void DisplayStartingMessage()
+    {
+        Console.WriteLine("This activity will help you relax by focusing on your breathing, which will be done in and out slowly.");
+    }
+    public void DisplayEndingMessage()
+    {
+    Console.WriteLine("Well done!!");
+    Console.WriteLine("");
+    Console.WriteLine("You have completed another 30 seconds of the breathing activity");
+    }
+    public void ShowSpinner(int seconds)
     {
         List<string> animationString = new List<string>();
         animationString.Add("|");
@@ -30,10 +45,5 @@ class Program
                 i = 0 ;
             }
         }
-        Console.WriteLine("Done. ");
     }
-    public void ShowCountdown(int seconds)
-    {
-        
-    }
-} 
+}
