@@ -1,6 +1,6 @@
 using System;
 using System.ComponentModel;
-public class ListingActivity
+public class ListingActivity : Activity
 {
     private int _count;
     private List<string> _prompts = new List<string>();
@@ -20,7 +20,7 @@ public class ListingActivity
         List<string> userList= new List<string>();
         return userList;
     }
-    private void Run()
+    public void Run()
     {
         
     }

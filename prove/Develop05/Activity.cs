@@ -1,11 +1,15 @@
 using System;
-using System.Diagnostics;
-using System.Runtime.Serialization;
-public class Activity()
+public class Activity
 {
-    private string _name;
-    private string _description;
-    private int _duration;
+    protected string _name;
+    protected string _description;
+    protected int _duration;
+    
+ 
+    public void SetDescription(string description)
+    {
+        _description = description;
+    }
     
     public void DisplayStartingMessage()
     {
@@ -13,9 +17,9 @@ public class Activity()
     }
     public void DisplayEndingMessage()
     {
-    Console.WriteLine("Well done!!");
-    Console.WriteLine("");
-    Console.WriteLine("You have completed another 30 seconds of the breathing activity");
+        Console.WriteLine("Well done!!");
+        Console.WriteLine("");
+        Console.WriteLine("You have completed another 30 seconds of the breathing activity");
     }
     public void ShowSpinner(int seconds)
     {
@@ -30,7 +34,7 @@ public class Activity()
         animationString.Add("\\");
 
         DateTime StartTime = DateTime.Now;
-        DateTime EndTime = StartTime.AddSeconds(10.5);
+        DateTime EndTime = StartTime.AddSeconds(seconds);
         int i = 0;
         while (DateTime.Now < EndTime)
         {
@@ -44,6 +48,17 @@ public class Activity()
             {
                 i = 0 ;
             }
+        }
+    }
+    public void ShowCountdownTimer(int seconds)
+    {
+        DateTime StartTime = DateTime.Now;
+        DateTime EndTime = StartTime.AddSeconds(seconds);
+        int i = 0;
+        while (DateTime.Now < EndTime)
+        {
+            Console.Write(seconds - i);
+            i++;
         }
     }
 }

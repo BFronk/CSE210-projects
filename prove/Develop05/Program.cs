@@ -4,36 +4,30 @@ class Program
 {
     static void Main(string[] args)
     {
-        List<string> animationString = new List<string>();
-        animationString.Add("|");
-        animationString.Add("/");
-        animationString.Add("-");
-        animationString.Add("\\");
-        animationString.Add("|");
-        animationString.Add("/");
-        animationString.Add("-");
-        animationString.Add("\\");
-
-        DateTime StartTime = DateTime.Now;
-        DateTime EndTime = StartTime.AddSeconds(10.5);
-        int i = 0;
-        while (DateTime.Now < EndTime)
+        Console.WriteLine("Welcome to the Mindfullness app! Please choose from the following options:");
+        Console.WriteLine("");
+        Console.WriteLine("1.Breathing activity");
+        Console.WriteLine("2.Reflecting activity");
+        Console.WriteLine("3.Listing activity");
+        Console.WriteLine("4.Quit");
+        int userChoice = int.Parse(Console.ReadLine());
+        while (userChoice != 4)
         {
-            string s = animationString[i];
-            Console.Write(s);
-            Thread.Sleep(200);
-            Console.Write("\b \b");
-            i++;
-
-            if (i >= animationString.Count)
+            if (userChoice == 1)
             {
-                i = 0 ;
+                BreathingActivity breating = new BreathingActivity();
+                breating.Run();
             }
-        }
-        Console.WriteLine("Done. ");
+            if (userChoice == 2)
+            {
+                ReflectingActivity reflecting = new ReflectingActivity();
+                reflecting.Run();
+            }
+            if (userChoice == 3)
+            {
+                ListingActivity listing = new ListingActivity();
+                listing.Run();
+            }
+        }   
     }
-    public void ShowCountdown(int seconds)
-    {
-        
-    }
-} 
+}

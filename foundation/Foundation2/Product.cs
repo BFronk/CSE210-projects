@@ -1,13 +1,13 @@
+using System.Dynamic;
 using System.Numerics;
-
 public class Product
 {
-    string _name;
-    int _productID;
-    float _price;
-    int _quantity;
+    private string _name;
+    private int _productID;
+    private double _price;
+    private int _quantity;
 
-    Product(string name, int productID, float price,int quantity)
+    public Product(string name, int productID, double price, int quantity)
     {
         _name = name;
         _productID = productID;
@@ -15,10 +15,16 @@ public class Product
         _quantity = quantity;
     }
     
-    public float CalcTotalCost()
+    public double GetPrice()
+    {
+        return _price;
+    }
+    public float GetQuan()
+    {
+        return _quantity;
+    }
+    public double CalcTotalCost()
     {
         return _price * _quantity;
     }
-
-
 }

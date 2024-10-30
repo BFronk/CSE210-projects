@@ -19,14 +19,17 @@ public class Address
 
     public bool isUSA(){
         bool retValue = false;
-        if (_country == "United States")
+        if (_country == "USA")
         {
             retValue = true;
         }
         return retValue;
     }
-    public void fullAddress()
+    public void ViewFullAddress()
     {
-        Console.WriteLine($"{_street}, {_city}, {_stateProvidence}, {_country}");
+        Console.WriteLine($"{_street}");
+        Console.WriteLine($"{_city}");
+        Console.WriteLine($"{_stateProvidence}");
+        Console.WriteLine($"{_country}");
     }
 }

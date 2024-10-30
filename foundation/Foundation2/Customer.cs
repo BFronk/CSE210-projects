@@ -16,16 +16,21 @@ public class Customer
     }
     public void viewCostomer()
     {
-        Console.WriteLine($"");
+        Console.WriteLine($"{_name}");
+        _address.ViewFullAddress();
     }
-
+    public Address GetAddress()
+    {
+        return _address;
+    }
     public bool isUSA()
         {
-        bool retVal = false;
-        if (_address.isUSA() == true)
-        {
-            retVal = true;
-        }
+            bool retVal = false;
+            if (_address.isUSA())
+
+            {
+                retVal = true;
+            }
         return retVal;
     }
 }
