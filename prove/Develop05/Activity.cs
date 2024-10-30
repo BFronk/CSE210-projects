@@ -5,21 +5,18 @@ public class Activity
     protected string _description;
     protected int _duration;
     
- 
-    public void SetDescription(string description)
-    {
-        _description = description;
-    }
     
     public void DisplayStartingMessage()
     {
-        Console.WriteLine("This activity will help you relax by focusing on your breathing, which will be done in and out slowly.");
+        Console.WriteLine($"welcome to the {_name} activity!");
+        Console.WriteLine("");
+        Console.WriteLine(_description);
     }
     public void DisplayEndingMessage()
     {
         Console.WriteLine("Well done!!");
         Console.WriteLine("");
-        Console.WriteLine("You have completed another 30 seconds of the breathing activity");
+        Console.WriteLine($"You have completed another {_duration} seconds of the {_name} activity!");
     }
     public void ShowSpinner(int seconds)
     {
@@ -58,7 +55,10 @@ public class Activity
         while (DateTime.Now < EndTime)
         {
             Console.Write(seconds - i);
+            Thread.Sleep(1000);
+            Console.Write("\b \b");
             i++;
         }
+        Console.WriteLine("");
     }
 }

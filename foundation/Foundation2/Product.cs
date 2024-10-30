@@ -14,7 +14,14 @@ public class Product
         _price = price;
         _quantity = quantity;
     }
-    
+    public string GetName()
+    {
+        return _name;
+    }
+    public int GetProductID()
+    {
+        return _productID;
+    }
     public double GetPrice()
     {
         return _price;

@@ -43,7 +43,7 @@ public class Journal
         { 
             Entry newEntry = new Entry();   
             //positiion works in groups of three and creates entries
-            string [] parts = lines[position].Split(": ");
+            string[] parts = lines[position].Split(": ");
             string[] dateAndPrompt = parts[1].Split(" ");
             newEntry._date = dateAndPrompt[0];
             newEntry._promptText = parts[2];

@@ -9,8 +9,8 @@ public class Order
     
     public Order(List<Product> products, Customer customer)
     {
-        products = _products;
-        customer = _customer;
+       _products = products;
+       _customer = customer;
     }
     public Customer GetCustomer()
     {
@@ -40,19 +40,26 @@ public class Order
         }
         return total;
     }
+
     public List<Product> GetProducts()
     {
         return _products;
     }
     public void ProducePackingLabel()
     {
+        Console.WriteLine("");
+        Console.WriteLine("Items: ");
         foreach (Product p in _products)
         {
-            Console.WriteLine($"{p.GetQuan()}");
+            string itemName = p.GetName();
+            Console.WriteLine($"{itemName}({p.GetProductID()}) X {p.GetQuan()}");
         }
+        Console.WriteLine("");
     }
     public void ProduceShippingLabel()
     {
+        Console.WriteLine("");
         _customer.viewCostomer();
+        Console.WriteLine("");
     }
 }

@@ -28,8 +28,7 @@ public class Address
     public void ViewFullAddress()
     {
         Console.WriteLine($"{_street}");
-        Console.WriteLine($"{_city}");
-        Console.WriteLine($"{_stateProvidence}");
+        Console.WriteLine($"{_city}, {_stateProvidence}");
         Console.WriteLine($"{_country}");
     }
 }

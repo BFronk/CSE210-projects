@@ -14,14 +14,14 @@ public class Customer
         _name = name;
         _isUSA = usa;
     }
-    public void viewCostomer()
-    {
-        Console.WriteLine($"{_name}");
-        _address.ViewFullAddress();
-    }
     public Address GetAddress()
     {
         return _address;
+    }
+    public void viewCostomer()
+    {
+        Console.WriteLine($"{_name}");
+        GetAddress().ViewFullAddress();
     }
     public bool isUSA()
         {
