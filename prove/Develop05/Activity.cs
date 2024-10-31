@@ -11,12 +11,20 @@ public class Activity
         Console.WriteLine($"welcome to the {_name} activity!");
         Console.WriteLine("");
         Console.WriteLine(_description);
+        ShowSpinner(3);
+        Console.WriteLine("How long, in seconds, would you like for your session?");
+        _duration = int.Parse(Console.ReadLine());
+        Console.Clear();
+        Console.WriteLine("Get Ready...");
+        ShowSpinner(3);
     }
     public void DisplayEndingMessage()
     {
         Console.WriteLine("Well done!!");
         Console.WriteLine("");
         Console.WriteLine($"You have completed another {_duration} seconds of the {_name} activity!");
+        ShowSpinner(3);
+        Console.Clear();
     }
     public void ShowSpinner(int seconds)
     {
@@ -29,7 +37,7 @@ public class Activity
         animationString.Add("/");
         animationString.Add("-");
         animationString.Add("\\");
-
+        Console.Write(" ");
         DateTime StartTime = DateTime.Now;
         DateTime EndTime = StartTime.AddSeconds(seconds);
         int i = 0;
@@ -46,9 +54,11 @@ public class Activity
                 i = 0 ;
             }
         }
+        Console.WriteLine();
     }
     public void ShowCountdownTimer(int seconds)
     {
+        Console.Write(" ");
         DateTime StartTime = DateTime.Now;
         DateTime EndTime = StartTime.AddSeconds(seconds);
         int i = 0;

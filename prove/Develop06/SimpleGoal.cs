@@ -9,15 +9,15 @@ public class SimpleGoal : Goal
         _isComplete = complete;
     }
 
-    public void RecordEvent()
+    public override void RecordEvent()
     {
 
     }
-    public void IsComplete()
+    public override bool IsComplete()
     {
-
+        return false;
     }
-    public string GetStringrepresentation()
+    public override string GetStringRepresentation()
     {
         return "hi";
     }

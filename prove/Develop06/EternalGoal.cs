@@ -3,15 +3,15 @@ public class EternalGoal : Goal
 {
     public EternalGoal(string name, string description, int points): base(name, description, points){}
 
-    public void RecordEvent()
+    public override void RecordEvent()
     {
 
     }
-    public void IsComplete()
+    public override bool IsComplete()
     {
-
+        return false;
     }
-    public string GetStringrepresentation()
+    public override string GetStringRepresentation()
     {
         return "hi";
     }

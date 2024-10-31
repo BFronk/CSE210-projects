@@ -16,8 +16,8 @@ class Program
             Console.Clear();    
             if (userChoice == 1)
             {
-                BreathingActivity breating = new BreathingActivity();
-                breating.Run();
+                BreathingActivity breathing = new BreathingActivity();
+                breathing.Run();
             }
             if (userChoice == 2)
             {
@@ -37,10 +37,16 @@ class Program
                 reflecting.AddPrompt("What did you learn about yourself through this experience?");
                 reflecting.AddPrompt("How can you keep this experience in mind in the future?");
                 reflecting.Run();
+
             }
             if (userChoice == 3)
             {
                 ListingActivity listing = new ListingActivity();
+                listing.AddPrompt("Who are people that you appreciate?");
+                listing.AddPrompt("What are personal strengths of yours?");
+                listing.AddPrompt("Who are people that you have helped this week?");
+                listing.AddPrompt("When have you felt the Holy Ghost this month?");
+                listing.AddPrompt("Who are some of your personal heroes?");
                 listing.Run();
             }
             Console.WriteLine("Please choose another activity.");

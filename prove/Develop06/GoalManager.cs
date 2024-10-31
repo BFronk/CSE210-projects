@@ -34,11 +34,17 @@ public class GoalManager
    }
    public void ListGoalNames()
    {
-        
+        foreach(Goal goal in _goals)
+        {
+            Console.WriteLine($"{goal.GetName()}");
+        }
    }
    public void ListGoalDetails()
    {
-    
+        foreach (Goal goal in _goals)
+        {
+            
+        }
    }
    public void CreateGoal()
    {
