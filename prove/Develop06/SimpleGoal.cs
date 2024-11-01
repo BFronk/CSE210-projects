@@ -1,24 +1,41 @@
 using System;
 using System.Collections;
+using System.Net.Http.Headers;
 public class SimpleGoal : Goal
 {
     private bool _isComplete;
 
-    public SimpleGoal(string name, string description, int points, bool complete): base(name, description, points)
+    public SimpleGoal(string name, string description, int points): base(name, description, points)
     {
-        _isComplete = complete;
+        _isComplete = false;
     }
 
-    public override void RecordEvent()
+    public override int RecordEvent()
     {
-
+        int retVal = 0;
+        if (IsComplete())
+        {
+            Console.WriteLine("You've already completed that Goal!");
+        }
+        else
+        {
+            _isComplete = true;
+            Console.WriteLine($"Congragulations! you've earned {_points} points!");
+            retVal += _points;
+        }
+        return retVal;
     }
     public override bool IsComplete()
     {
-        return false;
+        bool retVal = false;
+        if (_isComplete == true)
+        {
+            retVal = true;
+        }
+        return retVal;
     }
     public override string GetStringRepresentation()
     {
-        return "hi";
+        return $"Simple Goal:{_name}/{_description}/{_points}/{_isComplete}";
     }
 }

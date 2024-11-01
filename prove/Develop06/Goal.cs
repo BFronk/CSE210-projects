@@ -2,25 +2,31 @@ using System;
 using System.Reflection.Metadata.Ecma335;
 public abstract class Goal
 {
-    private string _shortName;
-    private string _description;
-    private int _points;
+    protected string _name;
+    protected string _description;
+    protected int _points;
     
     public string GetName() 
     {
-        return _shortName;
+        return _name;
+
     }
     protected Goal(string name, string description, int points)
     {
-        _shortName  = name;
+        _name = name;
         _description = description;
         _points = points;
     }
-    public abstract void RecordEvent();
+    public abstract int RecordEvent();
     public abstract bool IsComplete();
-    public string GetDetailsString()
+    public virtual string GetDetailsString()
     {
-        return"hi";
+        string checkbox = "[ ]";
+        if (IsComplete())
+        {
+            checkbox = "[X]";
+        }
+        return  $"{checkbox} {_name} ({_description})";
     }
     public abstract string GetStringRepresentation();
 }
